@@ -34,7 +34,9 @@ pipeline {
       steps {
         git branch: 'main', url: 'https://github.com/osadeyemo/k8s-mogambo-project.git'
         container('kaniko') {
-          sh "/kaniko/executor --force -f ${WORKSPACE}/Dockerfile -c ${WORKSPACE} --insecure --skip-tls-verify --cache=true --destination=docker.io/fdjapi10/dsodemo:v2"
+          sh "/kaniko/executor --force -f ${WORKSPACE}/Dockerfile -c ${WORKSPACE} --insecure --skip-tls-verify --cache=true --destination=docker.io/osadeyemo
+/
+dsodemo:v2"
         }
       }
     }
