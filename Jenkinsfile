@@ -32,7 +32,7 @@ pipeline {
   stages {
     stage('OCI Image BnP') {
       steps {
-        git branch: 'main', url: 'https://github.com/osadeyemo/Kubernetes-jenkins.git'
+        git branch: 'main', url: 'https://github.com/osadeyemo/k8s-mogambo-project.git'
         container('kaniko') {
           sh "/kaniko/executor --force -f ${WORKSPACE}/Dockerfile -c ${WORKSPACE} --insecure --skip-tls-verify --cache=true --destination=docker.io/osadeyemo/dsodemo:v1"
         }
